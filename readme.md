@@ -15,6 +15,7 @@
 
 The project has the following features:
 
+
 - User Interface: Chat window, responsive design, and customizability.
 - AI Features: Natural language understanding, context management, and multilingual support.
 - Security: Authentication, encryption, and privacy controls.
