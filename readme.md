@@ -13,10 +13,16 @@
 ## Overview
 
 
-Users should be able to:
+The project has the following features:
 
-- 
-- 
+
+- User Interface: Chat window, responsive design, and customizability.
+- AI Features: Natural language understanding, context management, and multilingual support.
+- Security: Authentication, encryption, and privacy controls.
+- Customization: Personalized responses, themes, and user profiles.
+- Integration: API and third-party services.
+- Monetization: Subscriptions, in-app purchases, and ads.
+- Analytics and Feedback: Usage analytics and user feedback mechanisms.
 
 
 ### Screenshot (desktop and mobile view)
@@ -28,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [live site URL](  )
+- Live Site URL: [live site URL]( https://koded247.github.io/ChatGPT-Clone-Project/ )
 
 
 ### Built with
