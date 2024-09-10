@@ -8,7 +8,7 @@ let userText = null;
 const API_KEY = "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";
 const initialHeight = chatInput.scrollHeight;
 
-const loadDatatFromLocalstorage = () =>{
+const loadDatatFromLocalStorage = () =>{
     const themeColor = localStorage.getItem("theme-color");
 
     document.body.classList.toggle("light-mode", themeColor === "light_mode");
@@ -23,7 +23,7 @@ const loadDatatFromLocalstorage = () =>{
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
 }
 
-loadDatatFromLocalstorage();
+loadDatatFromLocalStorage();
 
 
 const createElement = (html, className) => {
@@ -77,13 +77,13 @@ const copyResponse = (copyBtn) =>{
     const responseTextElement = copyBtn.parentElement.querySelector("p");
     navigator.clipboard.writeText(responseTextElement.textContent);
     copyBtn.textContent = "done";
-    setTimeout(() => copyBtn.textContent = "contenr_copy", 1000)
+    setTimeout(() => copyBtn.textContent = "content_copy", 1000)
 }
 
 const showTypingAnimation = () =>{
     const html = `<div class="chat-content">
         <div class="chat-details">
-            <img src="./images/chatbot.jpg" alt="chatbot-img">
+            <img src="./images/chatgpt.jpeg" alt="chatbot-img">
             <div class="typing-animation">
                 <div class="typing-dot" style="--delay: 0.2s"></div>
                 <div class="typing-dot" style="--delay: 0.3s"></div>
@@ -104,20 +104,20 @@ const handleOutgoingChat = () => {
     userText = chatInput.value.trim();
     if(!userText) return; // if chatinput is empty return from here
 
-    chatInput.valaue = "";
+    chatInput.value = "";
     chatInput.style.height = `${initialHeight}px`;
 
     const html = `<div class="chat-content">
         <div class="chat-details">
-            <img src="./images/user.jpg" alt="">
-            <p>${userText}</p>
+            <img src="./images/user.jpeg" alt="user-img">
+            <p></p>
         </div>
     </div>`;
 
     // create an outgoing chat div with the user's message, append it to chat container and remove default text
     const outgoingChatDiv = createElement(html, "outgoing");
     outgoingChatDiv.querySelector("p").textContent = userText;
-    document.querySelector(".defauly-text")?.remove();
+    document.querySelector(".default-text")?.remove();
     chatContainer.appendChild(outgoingChatDiv);
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
     setTimeout(showTypingAnimation, 500);
@@ -135,7 +135,7 @@ deleteButton.addEventListener("click", () => {
     // Remove the chats from local storage and call loadDataFromLocalstorage function
     if(confirm("Are you sure you want to delete all the chats?")){
         localStorage.removeItem("all-chats");
-        loadDatatFromLocalstorage();
+        loadDatatFromLocalStorage();
     }
 });
 
@@ -148,7 +148,7 @@ chatInput.addEventListener("input", () =>{
 chatInput.addEventListener("keydown", (e) =>{
     /* if the Enter key is pressed without shift and the window width is larger 
     than 800 pixels, handle the outgoing chat */ 
-    if(e.key === "Enter" && !e.shftKey && window.innerWidth > 800){
+    if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800){
         e.preventDefault();
         handleOutgoingChat();
     }

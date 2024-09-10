@@ -102,7 +102,7 @@ body {
   padding: 0 50px 0 25px;
 }
 
-span material-symbols-rounded {
+span.material-symbols-rounded {
   user-select: none;
   cursor: pointer;
 }
