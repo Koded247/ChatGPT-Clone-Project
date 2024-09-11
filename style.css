@@ -38,7 +38,28 @@ body {
 }
 :where(.chat-container, textarea)::-webkit-scrollbar {
   width: 6px;
+
 }
+.default-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.default-text h1 {
+  font-size: 3.3rem;
+}
+
+.default-text p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
 :where(.chat-container, textarea)::-webkit-scrollbar-track {
   background: var(--incoming-chat-bg);
   border-radius: 25px;
@@ -168,6 +189,8 @@ span.material-symbols-rounded {
   background: var(--incoming-chat-bg);
   resize: none;
   font-size: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
   padding: 15px 45px 15px 20px;
   border-radius: 4px;
   color: var(--text-color);
